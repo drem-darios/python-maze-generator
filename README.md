@@ -14,6 +14,6 @@ To run this project locally, clone this project and do the following steps:
 4c. Run `python ./main.py --maze-size <MAZE_SIZE> --printers ascii,image` to generate both an image and print the maze as ascii to the console
 
 ## Parameters
-* --maze-size (required): The program will generate an N * N maze of this size
-* --algorithm (optional): There are several ways to generate a maze. This option allows you to switch the implementation. Currently only 'backtracking' is supported.
-* --printers (optional): This option allows you to switch the way the maze is printed. Currently 'ascii' (default) and 'image' are supported. Pass in a comma separated list to use multiple printers.
+* `--maze-size (required)`: The program will generate an N * N maze of this size
+* `--algorithm (optional)`: There are several ways to generate a maze. This option allows you to switch the implementation. Currently only 'backtracking' is supported.
+* `--printers (optional)`: This option allows you to switch the way the maze is printed. Currently 'ascii' (default) and 'image' are supported. Pass in a comma separated list to use multiple printers.
