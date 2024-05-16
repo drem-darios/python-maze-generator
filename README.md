@@ -1,11 +1,17 @@
 # Python Maze Generator
 
-This program can be used to generate a maze of any size. At some point, your computer will give up, so try and keep it under 9000.
+This program can be used to generate a maze of any size. At some point, your computer will give up, so try and keep it under 1000 for now.
 
 ## Usage
-This project contains a Pipfile that will create a virtual python environment for you. There currently aren't any dependencies on third party libraries, but it is good to get used to working with pipenv anyways.
+This project contains a Pipfile that will create a virtual python environment and install dependencies for you.
+To run this project locally, clone this project and do the following steps: 
 
-Clone this project, cd into the project directory, run pipenv install, then pipenv shell. Once the shell is opened, run python ./main.py --maze-size <MAZE_SIZE>
+1. Run `cd python-maze-generator`
+2. Run `pipenv install` to create the virtual environment and install dependencies
+3. Run `pipenv shell` to open a python shell in the virtual environment
+4a. Run `python ./main.py --maze-size <MAZE_SIZE>` to generate a maze with the given size
+4b. Run `python ./main.py --maze-size <MAZE_SIZE> --printers image` to generate an image of the maze
+4c. Run `python ./main.py --maze-size <MAZE_SIZE> --printers ascii,image` to generate both an image and print the maze as ascii to the console
 
 ## Parameters
 * --maze-size (required): The program will generate an N * N maze of this size
