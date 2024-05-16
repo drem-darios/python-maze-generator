@@ -60,7 +60,7 @@ class ImagePrinter(MazePrinter):
         self.image_size = (self.maze.size * self.cell_size) + self.wall_thickness
 
     def print(self):
-        img = Image.new('RGB', (self.image_size, self.image_size), 'black')
+        img = Image.new('RGB', (self.image_size, self.image_size), 'white')
         draw = ImageDraw.Draw(img)
 
         for i in range(self.maze.size):
@@ -70,29 +70,29 @@ class ImagePrinter(MazePrinter):
 
                 # Draw top wall
                 if self.maze.grid_walls[i][j]['top']:
-                    draw.line((x, y, x + self.cell_size, y), fill="white", width=self.wall_thickness)
+                    draw.line((x, y, x + self.cell_size, y), fill="black", width=self.wall_thickness)
 
                 # Draw left wall
                 if self.maze.grid_walls[i][j]['left']:
-                    draw.line((x, y, x, y + self.cell_size), fill="white", width=self.wall_thickness)
+                    draw.line((x, y, x, y + self.cell_size), fill="black", width=self.wall_thickness)
 
                 # Draw right wall if it's the last column or if there's a right wall
                 if j == self.maze.size - 1 or self.maze.grid_walls[i][j]['right']:
-                    draw.line((x + self.cell_size, y, x + self.cell_size, y + self.cell_size), fill="white",
+                    draw.line((x + self.cell_size, y, x + self.cell_size, y + self.cell_size), fill="black",
                               width=self.wall_thickness)
 
                 # Draw bottom wall if it's the last row or if there's a bottom wall
                 if i == self.maze.size - 1 and self.maze.grid_walls[i][j]['bottom']:
-                    draw.line((x, y + self.cell_size, x + self.cell_size, y + self.cell_size), fill="white",
+                    draw.line((x, y + self.cell_size, x + self.cell_size, y + self.cell_size), fill="black",
                               width=self.wall_thickness)
 
         # Draw the start
-        draw.text((self.cell_size // 3, self.cell_size // 4), "S", fill="green")
+        draw.text((self.cell_size // 3, self.cell_size // 4), "S", fill="green", font_size=20)
 
         # Draw the exit
         ex = (self.maze.size - 1) * self.cell_size
         ey = (self.maze.size - 1) * self.cell_size
-        draw.text((ex + self.cell_size // 3, ey + self.cell_size // 4), "E", fill="red")
+        draw.text((ex + self.cell_size // 3, ey + self.cell_size // 4), "E", fill="red", font_size=20)
 
         img.show()
         img.save("maze.png")
